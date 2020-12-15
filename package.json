@@ -1,0 +1,24 @@
+{
+  "name": "image-shrink",
+  "version": "1.0.0",
+  "description": "Image size optimization app. Created using Electron en JS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron --no-sandbox .",
+    "dev": "nodemon --exec electron --no-sandbox ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevklash/image-shrink.git"
+  },
+  "author": "Kevin Romero -- (Skript)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevklash/image-shrink/issues"
+  },
+  "homepage": "https://github.com/kevklash/image-shrink#readme",
+  "devDependencies": {
+    "electron": "^11.1.0",
+    "nodemon": "^2.0.6"
+  }
+}
