@@ -17,10 +17,13 @@ let aboutWindow
 function createMainWindow() {
     mainWindow = new BrowserWindow({
         title: 'ImageShrink',
-        width: 500,
+        width: 400,
         height: 600,
         icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: isDev ? true : false,
+        webPreferences: {
+            nodeIntegration: true,
+        }
         // backgroundColor: 'white'
     })
 
