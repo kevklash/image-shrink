@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
+const { app, BrowserWindow, Menu, globalShortcut, ipcMain } = require('electron')
 
 // Set environment
 process.env.NODE.ENV = 'development'
@@ -115,5 +115,9 @@ const menu = [
         : 
     [])    
 ]
+
+ipcMain.on('image:minimize', (e, options) => {
+    console.log(options)
+})
 
 app.allowRendererProcessReuse = true
