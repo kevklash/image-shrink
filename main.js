@@ -1,6 +1,6 @@
 const os = require('os')
 const path = require ('path')
-const { app, BrowserWindow, Menu, globalShortcut, ipcMain, shell } = require('electron')
+const { app, BrowserWindow, Menu, globalShortcut, ipcMain, shell, ipcRenderer } = require('electron')
 const imagemin = require('imagemin')
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminPngquant = require('imagemin-pngquant')
@@ -141,6 +141,8 @@ async function shrinkImage({ imgPath, quality, dest }){
                  })
             ]
         })
+        // On Done (sending)
+        mainWindow.webContents.send('image:done')
         console.log(files)
         shell.openPath(dest)
     } catch (error) {

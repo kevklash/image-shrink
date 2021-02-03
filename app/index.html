@@ -61,6 +61,13 @@
                 quality 
             })
         } )
+        // On done (receiving)
+        ipcRenderer.on('image:done', () => {
+            // Materialize alert
+            M.toast({
+                html: `Image resized to ${slider.value}% quality`,
+            })
+        })
     </script>
 </body>
 </html>
