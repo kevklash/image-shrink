@@ -24,7 +24,8 @@ let aboutWindow
 function createMainWindow() {
     mainWindow = new BrowserWindow({
         title: 'ImageShrink',
-        width: isDev ? 800 : 450,
+        // width: isDev ? 800 : 450, Commenting this to set a fixed width
+        width: 450,
         height: 600,
         icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: isDev ? true : false,
@@ -34,9 +35,11 @@ function createMainWindow() {
         // backgroundColor: 'white'
     })
 
+    // Toggleing off dev tools
+    /*
     if (isDev) {
         mainWindow.webContents.openDevTools()
-    }
+    }*/
 
     mainWindow.loadURL(`file://${__dirname}/app/index.html`)
     // With loadURL we need to define a protocol, e.g. file, https, etc
