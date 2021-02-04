@@ -5,9 +5,10 @@ const imagemin = require('imagemin')
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminPngquant = require('imagemin-pngquant')
 const slash = require('slash')
+const log = require('electron-log')
 
 // Set environment
-process.env.NODE.ENV = 'development'
+process.env.NODE.ENV = 'production'
 
 // Checking environment
 const isDev = process.env.NODE.ENV !== 'production' ? true : false
@@ -143,10 +144,10 @@ async function shrinkImage({ imgPath, quality, dest }){
         })
         // On Done (sending)
         mainWindow.webContents.send('image:done')
-        console.log(files)
+        log.info(files)
         shell.openPath(dest)
     } catch (error) {
-        console.log(error)
+        log.error(err)
     }
 }
 
