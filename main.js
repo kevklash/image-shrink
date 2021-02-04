@@ -8,10 +8,11 @@ const slash = require('slash')
 const log = require('electron-log')
 
 // Set environment
-process.env.NODE.ENV = 'production'
+// process.env.NODE.ENV = 'production'
 
 // Checking environment
-const isDev = process.env.NODE.ENV !== 'production' ? true : false
+// const isDev = process.env.NODE.ENV !== 'production' ? true : false --- Commenting to set isDev to false
+isDev = false
 // Console loggin the platform
 console.log(process.platform)
 const isWindows = process.platform == 'win32' ? true : false
